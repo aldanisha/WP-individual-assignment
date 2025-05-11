@@ -1,7 +1,7 @@
-
-/* ================= General Styles ================= */
+/* ================= 1. General Styles (Global) ================= */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
 }
@@ -12,52 +12,25 @@ h1 {
   margin-top: 40px;
 }
 
-
-/* ================= Intro Section ================= */
-.intro {
-  display: flex;
-  justify-content: center;
-  padding: 35px 20px;
-  background-color: #ffffff;
-  color: #333;
-}
-
-.intro-box {
-  text-align: center;
-  padding: 30px;
-  border-radius: 20px;
-  background-color: #f0f0f0;
-  max-width: 600px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: #333;
-}
-
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #333;
-  margin-bottom: 20px;
-}
-
-.intro-box h1 {
-  font-size: 2.8em;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.intro-box p {
-  font-size: 1.2em;
-  color: #333;
-  line-height: 1.6;
-}
-
 .spacer {
   height: 3px;
 }
 
-/* ================= Hamburger Section ================= */
+footer {
+  background-color: transparent;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ================= Shared Components ================= */
+.hamburger {
+  font-size: 2em;
+  cursor: pointer;
+  display: block;
+  color: #fff;
+}
+
 .hamburger-popup {
   display: none;
   flex-direction: column;
@@ -84,7 +57,6 @@ h1 {
   color: #007acc;
 }
 
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -96,16 +68,32 @@ h1 {
   }
 }
 
+/* Social Media Icons */
+.social-icons {
+  margin-top: 10px;
+}
 
-/* ================= Navigation/Header Section ================= */
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a img:hover {
+  filter: grayscale(0%);
+}
+
+/* ================= 2. index.html ================= */
+/* --- Header --- */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 2em;
-  background-color: #333; 
-  /*color: #333 <-- Add this if missing */
-  height: 50px;           /* <-- Adjust height here */
+  background-color: #333;
+  height: 50px;
 }
 
 .site-branding {
@@ -123,92 +111,128 @@ h1 {
 .site-branding .site-name {
   font-size: 1.5em;
   font-weight: 500;
-  color: #fff;  /* <-- can change this */
-}
-
-.hamburger {
-  font-size: 2em;
-  cursor: pointer;
   color: #fff;
-  display: block;
 }
 
-/* Navigation menu */
-.navigation-menu {
-  list-style: none;
+/* --- Intro Section --- */
+.intro {
   display: flex;
   justify-content: center;
-  gap: 2em;
-  padding: 1em;
-  margin: 0;
-  background-color: transparent;
+  padding: 35px 20px;
+  background-color: #ffffff;
+  color: #333;
+  min-height: 100vh; 
+  align-items: center;
 }
 
-.navigation-menu li a {
+.intro-box {
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #333;
+  margin-bottom: 20px;
+}
+
+.intro-box h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+.intro-box p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* ================= 3. aboutme.html ================= */
+/* --- Header --- */
+/* (Uses .header-container, .site-branding, .site-name, .hamburger, .hamburger-popup from shared styles) */
+
+/* --- Section --- */
+.about-me-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background-position: center;
+  color: white;
+}
+
+.about-me-section h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.about-me-section h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.about-me-section p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-me-section a {
+  color: #ffd700;
   text-decoration: none;
   font-weight: bold;
-  color: #fff; /* <-- Text color */
+  transition: color 0.3s ease;
 }
 
-/* ================= Mobile Menu ================= */
-@media screen and (max-width: 768px) {
-  .navigation-menu {
-    display: none;
-    flex-direction: column;
-    background-color: #5a4b42;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  .navigation-menu.show {
-    display: flex;
-  }
-
-  .hamburger {
-    font-size: 2em;
-    cursor: pointer;
-    color: #000;
-    display: block;
-  }
+.about-me-section a:hover {
+  color: #ff4500;
 }
 
-footer {
-  background-color: transparent;
-  color: #333;
+/* ================= 4. projects.html ================= */
+/* --- Header --- */
+/* (Uses .header-container, .site-branding, .site-name, .hamburger, .hamburger-popup from shared styles) */
+
+/* --- Projects Section --- */
+/* --- Projects Section (Rewritten to match About Me layout) --- */
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 20px;
-}
-/* ================= Social Media ================= */
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a img {
-  width: 24px;
-  height: 24px;
-  margin: 0 10px;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  height: 100vh;
+  background-position: center;
+  color: #333;
+  padding: 0 20px;
 }
 
-.social-icons a img:hover {
-  filter: grayscale(0%);
+.projects-section h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
-
-
-/* ================= Projects Section ================= */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 40px;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .project {
@@ -238,8 +262,7 @@ footer {
   color: #555;
 }
 
-
-/* ================= Navigation Links Preview ================= */
+/* ================= 5. Navigation Links Preview ================= */
 .nav-links-preview {
   text-align: center;
   margin-bottom: 60px;
@@ -260,47 +283,42 @@ footer {
   color: #007acc;
 }
 
-/* ================= ABout Me section ================= */
-.about-me-section {
+/* ================= 6. Mobile Menu (Media Queries) ================= */
+@media screen and (max-width: 768px) {
+  .navigation-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #5a4b42;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .navigation-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    color: #000;
+  }
+}
+
+/* ================= 7. Navigation Menu ================= */
+.navigation-menu {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 100vh; /* Fullscreen height */
-
-  background-position: center;
-  color: white;
-}
-
-.about-me-section h1 {
-  font-size: 4em;
-  font-weight: bold;
+  gap: 2em;
+  padding: 1em;
   margin: 0;
+  background-color: transparent;
 }
 
-.about-me-section h3 {
-  font-size: 1.5em;
-  font-weight: 300;
-  margin: 20px 0;
-}
-
-.about-me-section p {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 20px auto;
-  line-height: 1.8;
-  color: #333;
-}
-
-/* Links Styling */
-.about-me-section a {
-  color: #ffd700; /* Gold color */
+.navigation-menu li a {
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.about-me-section a:hover {
-  color: #ff4500; /* Orange color */
+  color: #fff;
 }
