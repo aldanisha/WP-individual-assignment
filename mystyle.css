@@ -1,0 +1,306 @@
+
+/* ================= General Styles ================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 40px;
+}
+
+
+/* ================= Intro Section ================= */
+.intro {
+  display: flex;
+  justify-content: center;
+  padding: 35px 20px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.intro-box {
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #333;
+  margin-bottom: 20px;
+}
+
+.intro-box h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.intro-box p {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.spacer {
+  height: 3px;
+}
+
+/* ================= Hamburger Section ================= */
+.hamburger-popup {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.hamburger-popup a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 0;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hamburger-popup a:hover {
+  color: #007acc;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= Navigation/Header Section ================= */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #333; 
+  /*color: #333 <-- Add this if missing */
+  height: 50px;           /* <-- Adjust height here */
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-branding .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.site-branding .site-name {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #fff;  /* <-- can change this */
+}
+
+.hamburger {
+  font-size: 2em;
+  cursor: pointer;
+  color: #fff;
+  display: block;
+}
+
+/* Navigation menu */
+.navigation-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em;
+  margin: 0;
+  background-color: transparent;
+}
+
+.navigation-menu li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff; /* <-- Text color */
+}
+
+/* ================= Mobile Menu ================= */
+@media screen and (max-width: 768px) {
+  .navigation-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #5a4b42;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .navigation-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    font-size: 2em;
+    cursor: pointer;
+    color: #000;
+    display: block;
+  }
+}
+
+footer {
+  background-color: transparent;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+/* ================= Social Media ================= */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a img:hover {
+  filter: grayscale(0%);
+}
+
+
+
+/* ================= Projects Section ================= */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.project-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #007acc;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #555;
+}
+
+
+/* ================= Navigation Links Preview ================= */
+.nav-links-preview {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.nav-links-preview h2 {
+  margin: 20px 0;
+  font-size: 1.8em;
+}
+
+.nav-links-preview a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links-preview a:hover {
+  color: #007acc;
+}
+
+/* ================= ABout Me section ================= */
+.about-me-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh; /* Fullscreen height */
+
+  background-position: center;
+  color: white;
+}
+
+.about-me-section h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.about-me-section h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.about-me-section p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Links Styling */
+.about-me-section a {
+  color: #ffd700; /* Gold color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.about-me-section a:hover {
+  color: #ff4500; /* Orange color */
+}
